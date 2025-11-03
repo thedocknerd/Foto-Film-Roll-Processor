@@ -1,0 +1,13 @@
+services:
+  photo-processor:
+    build: .
+    container_name: film-roll-processor
+    ports:
+      - "3683:3683"
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    volumes:
+      - /c/Users/willr/Pictures/Film/:/app/uploads
+    mem_limit: 2g
+    cpus: 2
