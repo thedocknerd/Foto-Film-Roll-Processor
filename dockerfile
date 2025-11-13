@@ -17,9 +17,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
 COPY app.py .
+COPY white_balance.py .
+
+# Copy templates folder
+COPY templates/ ./templates/
 
 # Create necessary directories
-RUN mkdir -p /app/uploads /app/processed
+RUN mkdir -p /app/uploads /app/processed /app/output
 
 EXPOSE 3683
 

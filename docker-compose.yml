@@ -6,8 +6,9 @@ services:
       - "3683:3683"
     environment:
       - FLASK_ENV=production
+      - OUTPUT_FOLDER=/output
     restart: unless-stopped
     volumes:
-      - /c/Users/willr/Pictures/Film/:/app/uploads
-    mem_limit: 2g
-    cpus: 2
+      - C:/Users/willr/Pictures/output:/output:rw
+    mem_limit: 8g
+    cpus: 10
